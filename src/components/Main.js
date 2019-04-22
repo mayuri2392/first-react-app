@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Login from './Login';
-import Register from './Register';
-import User from './User';
-import Home from './Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import User from '../pages/User';
+import Home from '../pages/Home';
 
 const Main = () => {
     return <main>

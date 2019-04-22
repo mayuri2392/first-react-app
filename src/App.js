@@ -1,6 +1,6 @@
 import React from 'react'; 
-import Nav from './Nav';
-import Main from './Main';
+import  Nav  from './components/Nav';
+import  Main from './components/Main';
 
 
 const App = () => {
