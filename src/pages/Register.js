@@ -1,17 +1,24 @@
 import React from 'react'; 
-import UseForm from '../hooks/UseForm'; 
+import useForm from '../hooks/UseForm'; 
 
 const Register = (props) => {
-    const [values, onChange] = UseForm({
-      name: '',
-      email: '',
-      password: ''
-    });
-    const submit = (e) => {
-      e.preventDefault();
-      alert(JSON.stringify(values));
+  const [values, onChange] = useForm({});
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(values);
 
-    }
+    fetch('https://reqres.in/api/register',{
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    }).then((response) => {
+      response.json().then(jsonResponse => {
+        console.log(jsonResponse)
+      })
+    })
+  }
     return <div>
   <form onSubmit = {submit}>
          <h3>Register</h3>

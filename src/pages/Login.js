@@ -1,18 +1,23 @@
 import React from 'react';  
-import UseForm from '../hooks/UseForm';
+import useForm from '../hooks/UseForm';
 
 const Login = (props) => {
-    const [values, onChange] = UseForm({
-      email: '',
-      password: ''
-    });
-  
-   
-    const submit = (e) => {
-      e.preventDefault();
-      alert(JSON.stringify(values));
+  const [values, onChange] = useForm({});
+  const submit = async(e) => {
+    e.preventDefault();
+    console.log(values);
 
-    }
+    const response = await fetch('https://reqres.in/api/login',{
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    })
+    
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+  }
     return <div>
       <form onSubmit = {submit}>
         <h3>Login</h3>
