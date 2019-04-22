@@ -7,7 +7,7 @@ const Register = (props) => {
     e.preventDefault();
     console.log(values);
 
-    fetch('https://reqres.in/api/register',{
+    fetch('https://reqres.https://obscure-ocean-55890.herokuapp.com/users/register/api/register',{
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
