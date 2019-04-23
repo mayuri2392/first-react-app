@@ -4,6 +4,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Todos from '../pages/Todos';
 import Home from '../pages/Home';
+import Template from '../pages/Template.js';
 
 const Main = () => {
     return <main>
@@ -12,6 +13,7 @@ const Main = () => {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/todos" component={Todos} />
+        <Route path="/template" component={Template} />
     
       </Switch>
     </main>

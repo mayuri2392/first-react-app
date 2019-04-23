@@ -7,7 +7,7 @@ const App = () => {
   const [todos, setTodos] = useState({todos: []});
 
   useEffect(() => {
-    debugger;
+  
     fetch('https://jsonplaceholder.typicode.com/todos').then(async r => {
       const _json = await r.json();
       setTodos({ todos: _json});

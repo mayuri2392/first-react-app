@@ -3,21 +3,20 @@ import useForm from '../hooks/UseForm';
 
 const Register = (props) => {
   const [values, onChange] = useForm({});
-  const submit = (e) => {
+  const submit =async(e) => {
     e.preventDefault();
     console.log(values);
 
-    fetch('https://reqres.https://obscure-ocean-55890.herokuapp.com/users/register/api/register',{
+    const response = await fetch('https://reqres.in/api/register',{
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(values)
-    }).then((response) => {
-      response.json().then(jsonResponse => {
-        console.log(jsonResponse)
-      })
     })
+    
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
   }
     return <div>
   <form onSubmit = {submit}>
